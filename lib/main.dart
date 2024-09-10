@@ -8,6 +8,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'data/data_sources/todo_local_data_source.dart';
 import 'data/repositories/todo_repository_impl.dart';
 import 'domain/use_cases/add_todo.dart';
+import 'domain/use_cases/delete_todo.dart';
 import 'domain/use_cases/get_todos.dart';
 import 'presentation/screens/todo_list_screen.dart';
 import 'data/models/todo_model.dart';
@@ -36,13 +37,13 @@ void main() async {
   // Register use cases
   Get.put<GetTodos>(GetTodos(todoRepository));
   Get.put<AddTodo>(AddTodo(todoRepository));
-  // Get.put<DeleteTodo>(DeleteTodo(todoRepository));
+  Get.put<DeleteTodo>(DeleteTodo(todoRepository));
 
   // Register controllers
   Get.put<TodoController>(TodoController(
     getTodosUseCase: Get.find(),
     addTodoUseCase: Get.find(), 
-    // deleteTodo: Get.find(),
+    deleteTodoUseCase: Get.find(),
   ));
 
   runApp(MyApp());

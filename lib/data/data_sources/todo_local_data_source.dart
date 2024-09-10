@@ -13,4 +13,8 @@ class TodoLocalDataSource {
   Future<void> addTodo(TodoModel todo) async {
     await box.put(todo.id, todo);
   }
+
+  Future<void> deleteTodo(String id) async {
+    await box.delete(id);
+  }
 }

@@ -18,7 +18,9 @@ class TodoTile extends StatelessWidget {
         value: todo.completed,
         onChanged: (value) {},
       ),
-      onLongPress: () {},
+      onLongPress: () {
+        controller.deleteTodo(todo.id);
+      },
     );
   }
 }
