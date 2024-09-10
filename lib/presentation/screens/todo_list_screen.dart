@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_todolist/presentation/controllers/todo_controller.dart';
 import 'package:get/get.dart';
-
+import '../controllers/todo_controller.dart';
 import '../widgets/todo_tile.dart';
 
 class TodoListScreen extends StatelessWidget {
+  const TodoListScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final TodoController controller = Get.put(
-      TodoController(getTodosUseCase: Get.find(), addTodoUseCase: Get.find()),
+      TodoController(
+        getTodosUseCase: Get.find(),
+        addTodoUseCase: Get.find(),
+      ),
     );
 
     return Scaffold(

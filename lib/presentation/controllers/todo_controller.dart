@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../domain/entities/todo.dart';
 import '../../domain/use_cases/add_todo.dart';
 import '../../domain/use_cases/get_todos.dart';

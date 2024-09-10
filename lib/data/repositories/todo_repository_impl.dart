@@ -1,7 +1,7 @@
-import 'package:flutter_todolist/data/data_sources/todo_local_data_source.dart';
+import '../../domain/entities/todo.dart';
 import '../../domain/repositories/todo_repository.dart';
-import 'package:flutter_todolist/data/models/todo_model.dart';
-import 'package:flutter_todolist/domain/entities/todo.dart';
+import '../data_sources/todo_local_data_source.dart';
+import '../models/todo_model.dart';
 
 class TodoRepositoryImpl implements TodoRepository {
   final TodoLocalDataSource localDataSource;

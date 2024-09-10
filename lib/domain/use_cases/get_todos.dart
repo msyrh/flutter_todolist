@@ -1,5 +1,5 @@
-import 'package:flutter_todolist/domain/repositories/todo_repository.dart';
-import 'package:flutter_todolist/domain/entities/todo.dart';
+import '../repositories/todo_repository.dart';
+import '../entities/todo.dart';
 
 class GetTodos {
   final TodoRepository repository;
