@@ -12,6 +12,7 @@ class TodoListScreen extends StatelessWidget {
       TodoController(
         getTodosUseCase: Get.find(),
         addTodoUseCase: Get.find(),
+        updateTodoUseCase: Get.find(),
         deleteTodoUseCase: Get.find(),
       ),
     );

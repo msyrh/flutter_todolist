@@ -20,9 +20,15 @@ class TodoRepositoryImpl implements TodoRepository {
     await localDataSource.addTodo(todoModel);
   }
 
+  @override 
+  Future<void> updateTodo(Todo todo) async {
+    final todoModel = TodoModel.fromEntity(todo);
+    await localDataSource.updateTodo(todoModel);
+  }
+
   @override
   Future<void> deleteTodo(String id) async {
     await localDataSource.deleteTodo(id);
   }
-  
+
 }

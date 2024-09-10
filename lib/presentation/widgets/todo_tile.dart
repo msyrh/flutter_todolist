@@ -16,7 +16,9 @@ class TodoTile extends StatelessWidget {
       title: Text(todo.title),
       trailing: Checkbox(
         value: todo.completed,
-        onChanged: (value) {},
+        onChanged: (value) {
+          controller.updateTodo(todo.copyWith(completed: value ?? false));
+        },
       ),
       onLongPress: () {
         controller.deleteTodo(todo.id);
