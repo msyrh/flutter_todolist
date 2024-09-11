@@ -12,6 +12,7 @@ class TodoRepositoryImpl implements TodoRepository {
   Future<List<Todo>> getTodos() async {
     final todoModels = await localDataSource.getTodos();
     return todoModels.map((model) => model.toEntity()).toList();
+ 
   }
 
   @override
@@ -20,7 +21,7 @@ class TodoRepositoryImpl implements TodoRepository {
     await localDataSource.addTodo(todoModel);
   }
 
-  @override 
+  @override
   Future<void> updateTodo(Todo todo) async {
     final todoModel = TodoModel.fromEntity(todo);
     await localDataSource.updateTodo(todoModel);
@@ -30,5 +31,4 @@ class TodoRepositoryImpl implements TodoRepository {
   Future<void> deleteTodo(String id) async {
     await localDataSource.deleteTodo(id);
   }
-
 }
