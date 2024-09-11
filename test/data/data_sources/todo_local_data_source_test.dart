@@ -41,12 +41,14 @@ void main() {
       final newTodo = TodoModel(id: '3', title: 'New Todo');
 
       when(mockTodoLocalDataSource.addTodo(newTodo))
-          .thenAnswer((_) async => {});
+          .thenAnswer((_) async => mockBox.put(newTodo.id, newTodo));
+          
       // Act
       await mockTodoLocalDataSource.addTodo(newTodo);
 
       // Verify
       verify(mockTodoLocalDataSource.addTodo(newTodo)).called(1);
+      verify(mockBox.put(newTodo.id, newTodo)).called(1);
     });
 
     test('updateTodo() : should update a todo in mockBox', () async {
